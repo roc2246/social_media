@@ -1,0 +1,45 @@
+/*Header*/
+header {
+    background-color: blue;
+    padding: 1px;
+    padding-left: 20px;
+}
+
+header>h1, header>h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+header>h4 {
+    margin-top: -20px;
+    margin-left: 50px;
+}
+
+/*Navigation*/
+nav{
+    background-color: #ADD8E6;
+
+    padding: 8px;
+    padding-left: 20px;
+}
+
+nav>a{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+
+    color: black;
+}
+
+
+/*User Feed*/
+main {
+    height: 400px;
+}
+
+
+/*Footer*/
+footer{
+    border-top: solid;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
