@@ -1,7 +1,7 @@
 <?php 
 
 /** 
- * YourSpace Main Pge
+ * YourSpace Main Page
  * 
  * PHP version 7.4
  * 
