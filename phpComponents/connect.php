@@ -23,8 +23,7 @@ function createDB($connection, $database)
 {
     $newDB = "CREATE DATABASE IF NOT EXISTS $database;";
     if (mysqli_query($connection, $newDB)) {
-        /* 
-         */
+        /* echo "Database created successfully"; */
     } else {
         echo "Error creating database: " . mysqli_error($connection);
     }
