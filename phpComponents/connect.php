@@ -33,14 +33,24 @@ function credentials($dbname)
         $database = 'childswe_'.$dbname;
     } 
 
+    $connection = mysqli_connect($servername, $username, $password, $database);  
+    if (!$connection) {
+        die("Database connection failed");
+    }
+
+    // Create database
+    $newDB = "CREATE DATABASE IF NOT EXISTS $database;";
+    if (mysqli_query($connection, $newDB)) {
+        echo "Database created successfully";
+    } else {
+        echo "Error creating database: " . mysqli_error($connection);
+    }
+
 }
 
 credentials($dbname);
 
-$connection = mysqli_connect($servername, $username, $password, $database);  
-if (!$connection) {
-     die("Database connection failed");
-}
+
 
 
 ?>
