@@ -14,6 +14,7 @@
 
 $pageName = 'Homepage';
  require 'phpComponents/header.php';
+ require 'phpComponents/connect.php';
 
 ?>
 <body>
