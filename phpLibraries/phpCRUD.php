@@ -9,7 +9,7 @@
  * @package  Libraries
  * @author   Riley Childs <riley.childs@yahoo.com>
  * @license  Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
- * @link     none available
+ * @link     http://wh963069.ispot.cc/projects/social_media/phpLibraries/phpCRUD.php
  */
 
 require 'include/connect.php';
