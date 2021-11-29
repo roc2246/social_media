@@ -29,9 +29,14 @@ $pageName = 'Homepage';
     </nav>
 
     <main>
-        <h1>Sit tight, the user field will be here soon!</h1>
-        <!--Insert Login Form Here-->
+        <div id="homeContent">
+            <div id="statusFeed">
+                <h4 id="feedHeading">The Daily Chatter</h4>
+            </div>
+            <div id="loginForm">
 
+            </div>
+        </div>
     </main>
 
     <footer>

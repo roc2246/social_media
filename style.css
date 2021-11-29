@@ -35,9 +35,39 @@ nav>a:hover {
 }
 
 
-/*User Feed*/
+/*Main Content*/
 main {
     height: 400px;
+}
+
+#homeContent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center
+}
+
+/*User Feed*/
+#statusFeed {
+    background-color: #FFD580;
+    height: 400px;
+    width: 800px;
+}
+
+#feedHeading {
+    background-color: #6699CC;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+
+    padding: 4px;
+    margin-top: -4px;
+}
+
+/*Login Form*/
+#loginForm {
+    border: solid;
+    height: 120px;
+    width: 240px;
 }
 
 
