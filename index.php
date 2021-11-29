@@ -18,6 +18,8 @@ $pageName = 'Homepage';
 
 ?>
 <body>
+<script src="jsLibraries/validate.js"></script>
+
     <header>
         <h1>yourspace</h1>
         <h4>not <i>my</i> space!</h4>
@@ -33,15 +35,20 @@ $pageName = 'Homepage';
             <div id="statusFeed">
                 <h4 id="feedHeading">The Daily Chatter</h4>
             </div>
-            <div id="loginForm">
-
-            </div>
+                <form id="loginForm" name='login' method='post'>
+                    <h4>Login</h4>
+                    <input type="text" name='user' placeholder="email/username">
+                    <input type="password" name='password' placeholder="password">
+                    <input type="button" name= "submit" value="submit" 
+                    onclick="submitForm('login', 'index.php')">
+                </form>
         </div>
     </main>
 
     <footer>
         <p>Copyright 2021</p>
-
     </footer>
+
+
 </body>
 </html>

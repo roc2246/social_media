@@ -5,17 +5,15 @@
 let inputs = [];
 let regex = [];
 
-// eslint-disable-next-line no-unused-vars
-function txtBoxes(form) {
+function txtBoxes() {
   const txtBoxInputs = {
-    /* inset textboxes as properties here with 'form' as
-    the parameter */
+    username: document.login.user,
+    password: document.login.password,
   };
 
-  // eslint-disable-next-line no-empty-pattern
-  const { /* insert properties from 'txtBoxInputs' here */ } = txtBoxInputs;
+  const { username, password } = txtBoxInputs;
 
-  inputs.push();
+  inputs.push(username, password);
   return inputs;
 }
 
@@ -23,7 +21,10 @@ function txtBoxes(form) {
 // regex variables
 
 function regexAssign() {
-  regex.push();
+  const regexUsername = /^(?!\s*$).+/;
+  const regexPassword = /^(?!\s*$).+/;
+
+  regex.push(regexUsername, regexPassword);
   return regex;
 }
 
@@ -49,7 +50,7 @@ function loadMssg() {
 // eslint-disable-next-line no-unused-vars
 function submitForm(form, refreshTo) {
   const regexTest = [];
-  txtBoxes(form);
+  txtBoxes();
   regexAssign();
   function everyOne() {
     for (let i = 0; i < inputs.length; i++) {
@@ -66,8 +67,8 @@ function submitForm(form, refreshTo) {
 
   if (regexTest.length === inputs.length) {
     if (typeof regexEmail !== 'undefined') loadMssg();
-    form.setAttribute('action', refreshTo);
-    form.setAttribute('onsubmit', 'return true;');
+    document.getElementsByName(form)[0].setAttribute('action', refreshTo);
+    document.getElementsByName(form)[0].setAttribute('onsubmit', 'return true;');
   } else {
     for (let i = 0; i < inputs.length; i++) {
       if (!regex[i].test(inputs[i].value)) {
@@ -77,8 +78,8 @@ function submitForm(form, refreshTo) {
         inputs[i].select();
       }
     }
-    form.setAttribute('action', '');
-    form.setAttribute('onsubmit', 'return false;');
+    document.getElementsByName(form)[0].setAttribute('action', '');
+    document.getElementsByName(form)[0].setAttribute('onsubmit', 'return false;');
     inputs = [];
     regex = [];
   }

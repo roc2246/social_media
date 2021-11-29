@@ -1,3 +1,8 @@
+/*General Content*/
+h4{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 /*Header*/
 header {
     background-color: blue;
@@ -67,9 +72,13 @@ main {
 
 /*Login Form*/
 #loginForm {
-    border: solid;
     height: 120px;
     width: 240px;
+}
+
+/*Forms*/
+input{
+    margin: 4px;
 }
 
 /*#homeContent Flex Items*/
