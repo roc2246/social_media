@@ -35,15 +35,52 @@ nav>a:hover {
 }
 
 
-/*User Feed*/
+/*Main Content*/
 main {
     height: 400px;
 }
 
+#homeContent {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+    margin-top: 20px;
+}
+
+/*User Feed*/
+#statusFeed {
+    background-color: #FFD580;
+    height: 400px;
+    width: 800px;
+}
+
+#feedHeading {
+    background-color: #6699CC;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+
+    padding: 4px;
+    margin-top: -0px;
+}
+
+/*Login Form*/
+#loginForm {
+    border: solid;
+    height: 120px;
+    width: 240px;
+}
+
+/*#homeContent Flex Items*/
+#loginForm, #statusFeed {
+    margin: 6px; 
+}
 
 /*Footer*/
 footer{
     border-top: solid;
     font-family: Arial, Helvetica, sans-serif;
 
+    margin-top: 20px;
 }
