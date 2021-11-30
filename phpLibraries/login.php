@@ -37,7 +37,7 @@ function checkAvailable($table, $loginPage)
         $username = $_POST['user'];
         $password = $_POST['password'];     
         
-        $query = "SELECT * from $table where user = '$username'";
+        $query = "SELECT * from $table where username = '$username'";
 
         $result = mysqli_query($connection, $query);
         $count = mysqli_num_rows($result);
