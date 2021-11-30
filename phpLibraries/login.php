@@ -16,12 +16,12 @@
 /** 
  * Register Username 
  * 
- * @param string $table     the database table to use
- * @param string $loginPage the name of the login page to redirect to
+ * @param string $table        the database table to use
+ * @param string $redirectPage the name of the page to redirect to
  * 
  * @return new login credentials
  */
-function checkAvailable($table, $loginPage)
+function checkAvailable($table, $redirectPage)
 {
 
     /* Validates form data before submission */
@@ -59,7 +59,7 @@ function checkAvailable($table, $loginPage)
             /* Creates New User */
             $query = "INSERT INTO $table(email, username, password) ";
             $query .= "VALUES ('$email','$username', '$password')";  
-            /* header('Refresh: 2; URL = ' . $loginPage); */
+            /* header('Refresh: 2; URL = ' . $redirectPage); */
    
             /* Checks if query is successful */
             $result = mysqli_query($connection, $query);
