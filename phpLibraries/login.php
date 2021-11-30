@@ -44,7 +44,8 @@ function checkAvailable($table, $loginPage)
 
         /* Checks if username is available */
         if ($count>0) {
-            echo "User unavailable";
+            /*  echo "User unavailable"; */
+            echo "<script>alert('Username is unavailable');</script>";
         } else if ($count == 0) {
 
             /* Encrypts password */
@@ -65,7 +66,8 @@ function checkAvailable($table, $loginPage)
             if (!$result) {
                 die("QUERY FAILED" . mysqli_error($connection));    
             } else {
-                echo "User Created"; 
+                /* echo "User Created";  */
+                echo "<script>alert('User has been registered');</script>";
             }
         }
     } 

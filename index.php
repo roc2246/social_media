@@ -56,7 +56,16 @@ $pageName = 'Homepage';
             <!-- Modal content -->
             <div class="modal-content">
                <span class="close">&times;</span>
-               <?php require 'registration/newUser.php';?>
+               <h4 style="text-align:center;">Register New User</h4>
+               <form method="post" name="newUser">
+                   <input type="text" name="email" placeholder="email"><br>
+                   <input type="text" name="user" placeholder="username"><br>
+                   <input type="password" name="password" placeholder="passowrd"><br>
+                   <input type="submit" name= "submitNewUser" value="submit" 
+                   onclick="submitForm('newUser', 'index.php')" >
+                   <!-- <h4>Registration Status:</h4> -->
+                   <?php checkAvailable('users', 'index.php');?>
+               </form>
             </div>
 
         </div>
