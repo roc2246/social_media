@@ -59,7 +59,7 @@ function checkAvailable($table, $loginPage, $col1, $col2)
             /* Creates New User */
             $query = "INSERT INTO $table($col1,$col2) ";
             $query .= "VALUES ('$username', '$password')";  
-            header('Refresh: 2; URL = ' . $loginPage);
+            /* header('Refresh: 2; URL = ' . $loginPage); */
    
             /* Checks if query is successful */
             $result = mysqli_query($connection, $query);
