@@ -13,8 +13,12 @@
  */
 
 $pageName = 'Homepage';
+
  require 'phpComponents/header.php';
  require 'phpComponents/connect.php';
+
+ require 'phpLibraries/login.php';
+
 
 ?>
 <body>
@@ -37,10 +41,11 @@ $pageName = 'Homepage';
             </div>
                 <form id="loginForm" name='login' method='post'>
                     <h4>Login</h4>
-                    <input type="text" name='user' placeholder="email/username">
+                    <input type="text" name='user' placeholder="username">
                     <input type="password" name='password' placeholder="password">
-                    <input type="button" name= "submit" value="submit" 
+                    <input type="submit" name= "submit" value="submit" 
                     onclick="submitForm('login', 'index.php')">
+                    <?php login('users', '2', ''); ?>
                 </form>
         </div>
     </main>
