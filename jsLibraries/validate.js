@@ -5,26 +5,47 @@
 let inputs = [];
 let regex = [];
 
-function txtBoxes() {
-  const txtBoxInputs = {
-    username: document.login.user,
-    password: document.login.password,
-  };
+function txtBoxes(form) {
+  if (form === 'login') {
+    const txtBoxInputs = {
+      username: document.login.user,
+      password: document.login.password,
+    };
 
-  const { username, password } = txtBoxInputs;
+    const { username, password } = txtBoxInputs;
 
-  inputs.push(username, password);
+    inputs.push(username, password);
+  } else if (form === 'newUser') {
+    const txtBoxInputs = {
+      email: document.newUser.email,
+      username: document.newUser.user,
+      password: document.newUser.password,
+    };
+
+    const { email, username, password } = txtBoxInputs;
+
+    inputs.push(email, username, password);
+  }
   return inputs;
 }
 
 // eslint-disable-next-line no-useless-escape
 // regex variables
 
-function regexAssign() {
-  const regexUsername = /^(?!\s*$).+/;
-  const regexPassword = /^(?!\s*$).+/;
+function regexAssign(form) {
+  if (form === 'login') {
+    const regexUsername = /^(?!\s*$).+/;
+    const regexPassword = /^(?!\s*$).+/;
 
-  regex.push(regexUsername, regexPassword);
+    regex.push(regexUsername, regexPassword);
+  } else if (form === 'newUser') {
+    // eslint-disable-next-line no-useless-escape
+    const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const regexUsername = /^(?!\s*$).+/;
+    const regexPassword = /^(?!\s*$).+/;
+
+    regex.push(regexEmail, regexUsername, regexPassword);
+  }
   return regex;
 }
 
@@ -50,8 +71,8 @@ function loadMssg() {
 // eslint-disable-next-line no-unused-vars
 function submitForm(form, refreshTo) {
   const regexTest = [];
-  txtBoxes();
-  regexAssign();
+  txtBoxes(form);
+  regexAssign(form);
   function everyOne() {
     for (let i = 0; i < inputs.length; i++) {
       if (regex[i].test(inputs[i].value) === true) {

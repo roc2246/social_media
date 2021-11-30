@@ -13,12 +13,12 @@
  */
 
 ?>      <!-- Delete action attribute once validation is set up -->
-        <form method="post" name="newUser" action="index.php">
+        <form method="post" name="newUser">
             <input type="text" name="email" placeholder="email"><br>
             <input type="text" name="user" placeholder="username"><br>
-            <input type="text" name="password" placeholder="passowrd"><br>
+            <input type="password" name="password" placeholder="passowrd"><br>
             <input type="submit" name= "submitNewUser" value="submit" 
-            onclick="/* submitForm('newUser', 'newUser.php') */">
+            onclick="submitForm('newUser', 'index.php')" >
             <h4>Registration Status:</h4>
             <?php checkAvailable('users', 'index.php');?>
         </form>
