@@ -18,27 +18,26 @@
  * 
  * @param string $table     the database table to use
  * @param string $loginPage the name of the login page to redirect to
- * @param string $col1      the first field of the form
- * @param string $col2      the second field of the form
  * 
  * @return new login credentials
  */
-function checkAvailable($table, $loginPage, $col1, $col2)
+function checkAvailable($table, $loginPage)
 {
 
     /* Validates form data before submission */
-    if (empty($_POST[$col1]) && isset($_POST['submit']) 
-        || empty($_POST[$col2])&& isset($_POST['submit'])
+    if (empty($_POST['email']) && isset($_POST['submitNewUser']) 
+        || empty($_POST['user'])&& isset($_POST['submitNewUser'])
+        || empty($_POST['password'])&& isset($_POST['submitNewUser'])
     ) {
         echo "<h4>Please enter a username and password!</h4>";
-    } else if (isset($_POST['submit']) && !empty($_POST)) {
+    } else if (isset($_POST['submitNewUser']) && !empty($_POST)) {
         global $connection;
 
-        $username = $_POST[$col1];
-        $password = $_POST[$col2];     
-        $btwnQuotes = str_replace("'", " ", $col1);
+        $email = $_POST['email'];
+        $username = $_POST['user'];
+        $password = $_POST['password'];     
         
-        $query = "SELECT * from $table where $btwnQuotes = '$username'";
+        $query = "SELECT * from $table where user = '$username'";
 
         $result = mysqli_query($connection, $query);
         $count = mysqli_num_rows($result);
@@ -57,8 +56,8 @@ function checkAvailable($table, $loginPage, $col1, $col2)
             $password = crypt($password, $hashF_and_salt);   
 
             /* Creates New User */
-            $query = "INSERT INTO $table($col1,$col2) ";
-            $query .= "VALUES ('$username', '$password')";  
+            $query = "INSERT INTO $table(email, username, password) ";
+            $query .= "VALUES ('$email','$username', '$password')";  
             /* header('Refresh: 2; URL = ' . $loginPage); */
    
             /* Checks if query is successful */
@@ -127,20 +126,24 @@ function login($table, $time, $otherPara)
     $query .= "AND password = '$password' limit 1";
     $result = mysqli_query($connection, $query);
     $count = mysqli_num_rows($result);
-
-    if (isset($username) && isset($password) && !empty($username) && $count ==1) {
-        $_SESSION['user'] = $username;
-        $_SESSION['password'] = $password;
-
-        header("Refresh:". $time .";". $otherPara); 
-        $_SESSION['valid'] = true;
-        $_SESSION['timeout'] = time();
     
-        /*  echo "<h1>SUCCESS!</h1>"; */
-    } else if ($count ==0 && !empty($username)) {
-        echo "</h4>Error: Username/password does not exist!</h4>";
-    } else {
-        echo "";
+    if (isset($_POST['submit'])) {
+        if (isset($username) && isset($password)
+            && !empty($username) && $count ==1
+        ) {
+            $_SESSION['user'] = $username;
+            $_SESSION['password'] = $password;
+
+            header("Refresh:". $time .";". $otherPara); 
+            $_SESSION['valid'] = true;
+            $_SESSION['timeout'] = time();
+    
+            /*  echo "<h1>SUCCESS!</h1>"; */
+        } else if ($count ==0 && !empty($username)) {
+            echo "</h4>Error: Username/password does not exist!</h4>";
+        } else {
+            echo "";
+        }
     }
 }
 

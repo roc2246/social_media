@@ -12,15 +12,15 @@
  * @link     http://wh963069.ispot.cc/projects/social_media/registration/newUser.php
  */
 
-?>
-        <form method="post" name="newUser">
+?>      <!-- Delete action attribute once validation is set up -->
+        <form method="post" name="newUser" action="index.php">
             <input type="text" name="email" placeholder="email"><br>
             <input type="text" name="user" placeholder="username"><br>
             <input type="text" name="password" placeholder="passowrd"><br>
-            <input type="submit" name= "submit" value="submit" 
-            onclick="submitForm('newUser', 'newUser.php')">
+            <input type="submit" name= "submitNewUser" value="submit" 
+            onclick="/* submitForm('newUser', 'newUser.php') */">
             <h4>Registration Status:</h4>
-            <!--insert PHP function here-->
+            <?php checkAvailable('users', 'index.php');?>
         </form>
 
 
