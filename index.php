@@ -76,6 +76,11 @@ $pageName = 'Homepage';
         <p>Copyright 2021</p>
     </footer>
 <script>
+// Prevents A new user from being created upon refresh
+if (window.history.replaceState) {
+  window.history.replaceState( null, null, window.location.href );
+}
+
 // Get the modal
 var modal = document.getElementById("myModal");
 
