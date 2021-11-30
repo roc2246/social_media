@@ -106,41 +106,37 @@ function pleaseLoginAdmin()
  * 
  * @param string $table     the database table to use
  * @param string $time      the time it takes a successful login to redirect   
- * @param string $otherPara other parameters that may be needed 
- * @param string $col1      the first field of the form
- * @param string $col2      the second field of the form
- * 
+ * @param string $otherPara other parameters that may be needed   
+ *
  * @return successful or failed login
  */
-function login($table, $time, $otherPara, $col1, $col2) 
+function login($table, $time, $otherPara) 
 {
     global $connection;
-    $username = $_POST[$col1];
-    $password = $_POST[$col2];
+    $username = $_POST['user'];
+    $password = $_POST['password'];
 
     /* For decryption */
     $hashFormat = "$2y$10$"; 
     $salt = "iusesomecrazystrings22";
     $hashF_and_salt = $hashFormat . $salt;
-    $password = crypt($password, $hashF_and_salt); 
-
-    $btwnQuotes = str_replace("'", " ", $col1);
-    $btwnQuotesPssWrd = str_replace("'", " ", $col2);
+    $password = crypt($password, $hashF_and_salt);  
 
     /* Strores query and query results */
-    $query = "SELECT * from $table where $btwnQuotes = '$username' ";
-    $query .= "AND $btwnQuotesPssWrd = '$password' limit 1";
+    $query = "SELECT * from $table WHERE username = '$username' ";
+    $query .= "AND password = '$password' limit 1";
     $result = mysqli_query($connection, $query);
     $count = mysqli_num_rows($result);
- 
+
     if (isset($username) && isset($password) && !empty($username) && $count ==1) {
-        $_SESSION[$col1] = $username;
-        $_SESSION[$col2] = $password;
+        $_SESSION['user'] = $username;
+        $_SESSION['password'] = $password;
 
         header("Refresh:". $time .";". $otherPara); 
         $_SESSION['valid'] = true;
         $_SESSION['timeout'] = time();
     
+        /*  echo "<h1>SUCCESS!</h1>"; */
     } else if ($count ==0 && !empty($username)) {
         echo "</h4>Error: Username/password does not exist!</h4>";
     } else {
