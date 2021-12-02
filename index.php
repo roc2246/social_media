@@ -64,9 +64,7 @@ $pageName = 'Homepage';
 
     </main>
 
-    <footer>
-        <p>Copyright 2021</p>
-    </footer>
+   <?php require 'phpComponents/footer.php';?>
 <script>
 // Prevents A new user from being created upon refresh
 if (window.history.replaceState) {
