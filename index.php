@@ -24,15 +24,7 @@ $pageName = 'Homepage';
 <body>
 <script src="jsLibraries/validate.js"></script>
 
-    <header>
-        <h1>yourspace</h1>
-        <h4>not <i>my</i> space!</h4>
-    </header>
-
-    <nav>
-        <!--Echo dropdown here for user-->
-        <a href="index.php">home</a> |
-    </nav>
+<?php require 'phpComponents/navigation.php';?>
 
     <main>
         <div id="homeContent">
@@ -64,7 +56,7 @@ $pageName = 'Homepage';
                    <input type="submit" name= "submitNewUser" value="submit" 
                    onclick="submitForm('newUser', 'index.php')" >
                    <!-- <h4>Registration Status:</h4> -->
-                   <?php checkAvailable('users', 'index.php');?>
+                   <?php checkAvailable('users', 'profileForm.php');?>
                </form>
             </div>
 
