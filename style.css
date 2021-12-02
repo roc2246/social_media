@@ -96,6 +96,17 @@ input{
     margin: 4px;
 }
 
+label {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#editProfile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /*#homeContent Flex Items*/
 #loginForm, #statusFeed {
     margin: 6px; 

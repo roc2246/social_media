@@ -59,7 +59,6 @@ function checkAvailable($table, $redirectPage)
             /* Creates New User */
             $query = "INSERT INTO $table(email, username, password) ";
             $query .= "VALUES ('$email','$username', '$password')";  
-            /* header('Refresh: 2; URL = ' . $redirectPage); */
    
             /* Checks if query is successful */
             $result = mysqli_query($connection, $query);
@@ -68,6 +67,7 @@ function checkAvailable($table, $redirectPage)
             } else {
                 /* echo "User Created";  */
                 echo "<script>alert('User has been registered');</script>";
+                header('Refresh: 0; URL = ' . $redirectPage);
             }
         }
     } 
