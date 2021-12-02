@@ -87,13 +87,23 @@ main {
 
 /*Login Form*/
 #loginForm {
-    height: 120px;
-    width: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /*Forms*/
 input{
     margin: 4px;
+}
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#editProfile {
+    margin: auto;
+    width: 30%;
 }
 
 /*#homeContent Flex Items*/
