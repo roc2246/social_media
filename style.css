@@ -76,13 +76,22 @@ main {
     width: 800px;
 }
 
-#feedHeading {
+#feedHeading, .boxHeading {
     background-color: #6699CC;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 
     padding: 4px;
     margin-top: -0px;
+}
+
+/*Standard Box*/
+.standardBox {
+    background-color: #FFD580;
+    margin: 10px;
+}
+#editProfileBttn {
+    text-align: center;
 }
 
 /*Login Form*/
@@ -96,16 +105,34 @@ input{
     margin: 4px;
 }
 
-label {
+input[type=submit] {
+    width: 75px;
+    height: 25px;
+    border-radius: 10px;
+
     font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: blue;
+    background-image: linear-gradient(rgb(240, 236, 236), rgb(184, 184, 184));
+
+}
+
+input[type=submit]:hover{
+    background: white;
+
 }
 
 #editProfile {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
 }
+
 
 /*#homeContent Flex Items*/
 #loginForm, #statusFeed {

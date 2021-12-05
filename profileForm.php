@@ -26,22 +26,44 @@ require 'phpLibraries/login.php';
 <?php require 'phpComponents/navigation.php';?>
 
     <main>
-        <div id="editProfile">
             <h1>Edit Your Profile Here</h1>
-                <form name="editProfile"  method="post" action="profileForm.php">
-                    <label for="profilePic">Profile Picture</label>
-                    <input type="file" name="profilePic"><br><br>
-                    <label for="aboutMe">About Me</label><br>
-                    <textarea name="aboutMe"></textarea><br><br>
-                    <label for="interests">Interests</label><br><br>
-                    <input type="text" name="interests"><br><br>
-                    <label for="favoriteMovies">Favorite Movies</label><br><br>
-                    <input type="text" name="favoriteMovies"><br><br>
-                    <label for="favoriteBooks">Favorite Books</label><br><br>
-                    <input type="text" name="favoriteBooks"><br><br>
+            <form name="editProfile"  method="post" action="profileForm.php">
+                <div id="editProfile">
+                    <div class="standardBox">
+                        <label for="profilePic">
+                            <h4 class="boxHeading">Profile Picture</h4>
+                        </label><br>
+                        <input type="file" name="profilePic">
+                    </div>
+                    <div class="standardBox">
+                        <label for="aboutMe">
+                        <h4 class="boxHeading">About Me</h4>
+                        </label><br>
+                        <textarea name="aboutMe"></textarea>
+                   </div>
+                    <div class="standardBox">
+                        <label for="interests">
+                        <h4 class="boxHeading">Interests</h4>
+                        </label>
+                        <input type="text" name="interests">
+                    </div>
+                    <div class="standardBox">
+                        <label for="favoriteMovies">
+                        <h4 class="boxHeading">Favorite Movies</h4>
+                        </label>
+                        <input type="text" name="favoriteMovies">
+                    </div>
+                    <div class="standardBox">
+                        <label for="favoriteBooks">
+                        <h4 class="boxHeading">Favorite Books</h4>
+                        </label>
+                        <input type="text" name="favoriteBooks">
+                    </div>
+                </div>
+                <div id="editProfileBttn">
                     <input type="submit" name= "submitProfileInfo" value="submit">
+                </div>
             </form>
-        </div>
     </main>
 
    <?php require 'phpComponents/footer.php';?>
