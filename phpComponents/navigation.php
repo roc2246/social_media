@@ -23,4 +23,7 @@
     <nav>
         <!--Echo dropdown here for user-->
         <a href="index.php">home</a> |
+        <a href="">people</a> |
+        <a href="">pictures</a> |
+        <a href="">help</a> |
     </nav>
