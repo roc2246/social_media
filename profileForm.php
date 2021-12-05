@@ -64,6 +64,12 @@ require 'phpLibraries/login.php';
                     <input type="submit" name= "submitProfileInfo" value="submit">
                 </div>
             </form>
+            <br>
+            <div id="">
+            <h4 style="text-align:center;">Or</h4>
+            <h4 style="text-align:center;">
+                <a href="" style="text-align:center;">Go to your homepage</a>
+            </h4>
     </main>
 
    <?php require 'phpComponents/footer.php';?>
