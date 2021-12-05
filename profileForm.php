@@ -32,33 +32,35 @@ require 'phpLibraries/login.php';
                     <div class="standardBox">
                         <label for="profilePic">
                             <h4 class="boxHeading">Profile Picture</h4>
-                        </label><br>
+                        </label>
                         <input type="file" name="profilePic">
                     </div>
-                    <div class="standardBox">
-                        <label for="aboutMe">
-                        <h4 class="boxHeading">About Me</h4>
-                        </label><br>
-                        <textarea name="aboutMe"></textarea>
-                   </div>
+
                     <div class="standardBox">
                         <label for="interests">
-                        <h4 class="boxHeading">Interests</h4>
+                            <h4 class="boxHeading">Interests</h4>
                         </label>
                         <input type="text" name="interests">
                     </div>
                     <div class="standardBox">
                         <label for="favoriteMovies">
-                        <h4 class="boxHeading">Favorite Movies</h4>
+                            <h4 class="boxHeading">Favorite Movies</h4>
                         </label>
                         <input type="text" name="favoriteMovies">
                     </div>
                     <div class="standardBox">
                         <label for="favoriteBooks">
-                        <h4 class="boxHeading">Favorite Books</h4>
+                            <h4 class="boxHeading">Favorite Books</h4>
                         </label>
                         <input type="text" name="favoriteBooks">
                     </div>
+                    <div class="standardBox">
+                        <label for="aboutMe">
+                            <h4 class="boxHeading">About Me</h4>
+                        </label>
+                        <textarea name="aboutMe" style="resize:none;margin:10px;"
+                         rows="10" cols="50"></textarea>
+                   </div>
                 </div>
                 <div id="editProfileBttn">
                     <input type="submit" name= "submitProfileInfo" value="submit">
