@@ -70,7 +70,9 @@ require 'phpLibraries/login.php';
             <div id="">
             <h4 style="text-align:center;">Or</h4>
             <h4 style="text-align:center;">
-                <a href="" style="text-align:center;">Go to your homepage</a>
+                <a href="userHome.php" style="text-align:center;">
+                    Go to your homepage
+                </a>
             </h4>
     </main>
 
