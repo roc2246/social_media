@@ -13,7 +13,7 @@
  */
 
 
-$pageName = 'Edit Profile';
+$pageName = 'User Home';
 
 require 'phpComponents/header.php';
 require 'phpComponents/connect.php';
