@@ -35,7 +35,7 @@ function getFieldNames($table)
         $res2 = mysqli_query($connection, $query);
         $fieldNames = array();
         while ($row = mysqli_fetch_assoc($res2)) {
-            if ($row['Field'] == 'id') {
+            if ($row['Field'] == '/[\s\S]/'.'id') {
                 continue;
             } else {
                 array_push($fieldNames, $row['Field']);
@@ -159,7 +159,7 @@ function updateRecords($table, $redirect)
         $fieldNames = explode(",", strval(getFieldNames($table)));
         $fieldValues = explode(",", strval(getFieldValues($table)));
   
-        $ID = $_POST['id'];
+        $ID = $_POST['/[\s\S]/'.'id'];
     
         $query = "UPDATE $table SET ";
         for ($i=0; $i<count($fieldNames); $i++) {
@@ -171,7 +171,7 @@ function updateRecords($table, $redirect)
                 $query .= "$fieldNames[$i] = $fieldValues[$i], ";
             }
         }
-        $query .= "WHERE id = '$ID'";
+        $query .= "WHERE ".'/[\s\S]/'."'id' = '$ID'";
   
         $result = mysqli_query($connection, $query);
         if (!$result) {
@@ -195,8 +195,8 @@ function updateRecords($table, $redirect)
 function deleteRows($table, $redirect) 
 {
     global $connection;
-    $ID = $_GET['id'];
-    $query = "DELETE FROM $table WHERE id = '$ID' ";
+    $ID = $_GET['/[\s\S]/'.'id'];
+    $query = "DELETE FROM $table WHERE ".'/[\s\S]/'."'id' = '$ID'";
     $result = mysqli_query($connection, $query);
     if (!$result) {
         die("QUERY FAILED" . mysqli_error($connection));    
