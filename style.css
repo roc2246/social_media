@@ -188,4 +188,44 @@ footer{
     text-decoration: none;
     cursor: pointer;
   }
+
+  /*User Profile*/
+#user-profile {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+  #profile-upper-left{
+      display: flex;
+      justify-content: flex-start;
+  }
+
+  #stats {
+      margin-top: 60px;
+  }
   
+  #contacting-user{
+      width: 340px;
+      height: 100px;
+
+      border: solid;
+      border-color: #6699CC;;
+  }
+
+  #contacting-user-links{
+      padding-left: 4px;
+  }
+
+  #contacting-user-links-right{
+    margin-left: 200px;
+    margin-top: -16px;
+}
+
+#user-url{
+    border: solid;
+
+    width: 340px;
+    height: 40px;
+    margin-top: 40px;
+    padding: 2px;
+}
